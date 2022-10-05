@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Earthquake and Tectonic Plates</title>
+
+<!-- leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" 
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" 
+    crossorigin="" />
+
+<!-- CSS -->
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    #map,
+    body,
+    html {
+        height: 100%;
+    }
+</style>
+
+<body>
+<!-- div for map -->
+<div id="map">
+    <div style="padding-bottom: 20px;" class="leaflet-bottom">
+    </div>
+</div>
+
+<!-- leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+<!-- D3 JS -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<!-- API key MAYBE ISSUE -->
+<!-- <script type="text/javascript" src="static/js/config.js"></script> -->
+
+<!-- Original JS -->
+<script>
+    var theMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+
+// Base layer
+    var map = L.map("map", {
+        center: [38.50,-96.00],
+        zoom: 3,
+        layers: [theMap]
+    });
+
+    theMap.addTo(map)
+    </script>
+</body>
+</html>
